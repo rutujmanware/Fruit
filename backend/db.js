@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
-const mongoURI =
-  "mongodb+srv://manwarerutuj:Fruitmern@cluster1.9abxiua.mongodb.net/FruitMern?retryWrites=true&w=majority";
+
 
 const mongoDB = async () => {
   try {
-    await mongoose.connect(mongoURI, {
+    await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true, // Add this option for the latest MongoDB driver
     });
